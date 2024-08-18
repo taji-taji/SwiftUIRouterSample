@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		76AE1E6E2C6F7F55007AF921 /* RouterSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE1E6D2C6F7F55007AF921 /* RouterSampleApp.swift */; };
-		76AE1E702C6F7F55007AF921 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE1E6F2C6F7F55007AF921 /* ContentView.swift */; };
 		76AE1E722C6F7F57007AF921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76AE1E712C6F7F57007AF921 /* Assets.xcassets */; };
 		76AE1E752C6F7F57007AF921 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76AE1E742C6F7F57007AF921 /* Preview Assets.xcassets */; };
 		76AE1E7F2C6F7F58007AF921 /* RouterSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE1E7E2C6F7F58007AF921 /* RouterSampleTests.swift */; };
 		76AE1E892C6F7F58007AF921 /* RouterSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE1E882C6F7F58007AF921 /* RouterSampleUITests.swift */; };
 		76AE1E8B2C6F7F58007AF921 /* RouterSampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE1E8A2C6F7F58007AF921 /* RouterSampleUITestsLaunchTests.swift */; };
+		76AE1E9B2C7019B1007AF921 /* App in Frameworks */ = {isa = PBXBuildFile; productRef = 76AE1E9A2C7019B1007AF921 /* App */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		76AE1E6A2C6F7F55007AF921 /* RouterSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouterSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76AE1E6D2C6F7F55007AF921 /* RouterSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterSampleApp.swift; sourceTree = "<group>"; };
-		76AE1E6F2C6F7F55007AF921 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		76AE1E712C6F7F57007AF921 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76AE1E742C6F7F57007AF921 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		76AE1E7A2C6F7F57007AF921 /* RouterSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouterSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +43,7 @@
 		76AE1E842C6F7F58007AF921 /* RouterSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouterSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76AE1E882C6F7F58007AF921 /* RouterSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterSampleUITests.swift; sourceTree = "<group>"; };
 		76AE1E8A2C6F7F58007AF921 /* RouterSampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterSampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		76AE1E982C6F827C007AF921 /* RouterSample */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RouterSample; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76AE1E9B2C7019B1007AF921 /* App in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,10 +75,12 @@
 		76AE1E612C6F7F55007AF921 = {
 			isa = PBXGroup;
 			children = (
+				76AE1E982C6F827C007AF921 /* RouterSample */,
 				76AE1E6C2C6F7F55007AF921 /* RouterSample */,
 				76AE1E7D2C6F7F58007AF921 /* RouterSampleTests */,
 				76AE1E872C6F7F58007AF921 /* RouterSampleUITests */,
 				76AE1E6B2C6F7F55007AF921 /* Products */,
+				76AE1E992C7019B1007AF921 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				76AE1E6D2C6F7F55007AF921 /* RouterSampleApp.swift */,
-				76AE1E6F2C6F7F55007AF921 /* ContentView.swift */,
 				76AE1E712C6F7F57007AF921 /* Assets.xcassets */,
 				76AE1E732C6F7F57007AF921 /* Preview Content */,
 			);
@@ -127,6 +129,13 @@
 			path = RouterSampleUITests;
 			sourceTree = "<group>";
 		};
+		76AE1E992C7019B1007AF921 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +152,9 @@
 			dependencies = (
 			);
 			name = RouterSample;
+			packageProductDependencies = (
+				76AE1E9A2C7019B1007AF921 /* App */,
+			);
 			productName = RouterSample;
 			productReference = 76AE1E6A2C6F7F55007AF921 /* RouterSample.app */;
 			productType = "com.apple.product-type.application";
@@ -257,7 +269,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76AE1E702C6F7F55007AF921 /* ContentView.swift in Sources */,
 				76AE1E6E2C6F7F55007AF921 /* RouterSampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,6 +599,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		76AE1E9A2C7019B1007AF921 /* App */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = App;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 76AE1E622C6F7F55007AF921 /* Project object */;
 }
