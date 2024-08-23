@@ -15,10 +15,10 @@ public struct View1: View {
         VStack {
             Text("View1")
             Button("to View2") {
-                router.push(to: Destination.view2)
+                router.navigate(to: Destination.view2)
             }
             Button("to View3") {
-                router.push(to: Destination.view3(fromView: "View1"))
+                router.navigate(to: Destination.view3(fromView: "View1"))
             }
         }
         .navigationDestination(for: Destination.self) { destination in

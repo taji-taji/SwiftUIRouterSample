@@ -16,16 +16,16 @@ public final class Router: ObservableObject {
         viewProvider(destination)
     }
 
-    public func push<Destination: RouteDestination>(to destination: Destination) {
+    public func navigate<Destination: RouteDestination>(to destination: Destination) {
         path.append(destination)
     }
 
-    public func pop() {
+    public func back() {
         guard !path.isEmpty else { return }
         path.removeLast()
     }
 
-    public func popToRoot() {
+    public func backToRoot() {
         path = .init()
     }
 }

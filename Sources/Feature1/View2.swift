@@ -9,7 +9,7 @@ public struct View2: View {
         VStack {
             Text("View2")
             Button("Back to Root") {
-                router.popToRoot()
+                router.backToRoot()
             }
         }
         .navigationTitle("View2")

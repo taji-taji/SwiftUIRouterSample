@@ -21,7 +21,7 @@ public struct View3: View {
                 isPresented = true
             }
             Button("Back") {
-                router.pop()
+                router.back()
             }
         }
         .sheet(isPresented: $isPresented) {
