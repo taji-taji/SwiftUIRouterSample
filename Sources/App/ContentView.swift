@@ -1,7 +1,7 @@
 import SwiftUI
 import Router
 
-public struct ContentView: View {
+public struct ContentView: View, Navigatable {
     public enum Destination: RouteDestination {
         case view1
         case view3(fromView: String)
@@ -12,14 +12,13 @@ public struct ContentView: View {
     public init() {}
 
     public var body: some View {
-        List {
-            NavigationLink("to View1", value: Destination.view1)
-            NavigationLink("to View3", value: Destination.view3(fromView: "ContentView"))
+        navigatableView {
+            List {
+                NavigationLink("to View1", value: Destination.view1)
+                NavigationLink("to View3", value: Destination.view3(fromView: "ContentView"))
+            }
+            .navigationTitle("ContentView")
         }
-        .navigationDestination(for: Destination.self) { destination in
-            router.view(for: destination)
-        }
-        .navigationTitle("ContentView")
     }
 }
 
