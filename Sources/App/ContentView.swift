@@ -7,7 +7,7 @@ public struct ContentView: View, Navigatable {
         case view3(fromView: String)
     }
 
-    @EnvironmentObject private var router: Router
+    @EnvironmentObject public var router: Router
 
     public init() {}
 
