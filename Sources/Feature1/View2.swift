@@ -1,15 +1,16 @@
 import SwiftUI
 import Router
 
+@Navigatable
 public struct View2: View {
-    @EnvironmentObject private var router: Router
+    public struct Destination: RouteDestination {}
     public init() {}
 
     public var body: some View {
         VStack {
             Text("View2")
             Button("Back to Root") {
-                router.backToRoot()
+                navigateBackToRoot()
             }
         }
         .navigationTitle("View2")

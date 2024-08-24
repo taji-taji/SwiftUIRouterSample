@@ -1,29 +1,27 @@
 import SwiftUI
 import Router
 
-public struct View1: View, Navigatable {
+@Navigatable
+public struct View1: View {
     public enum Destination: RouteDestination {
         case view2
         case view3(fromView: String)
     }
 
-    @EnvironmentObject public var router: Router
-
     public init() {}
 
     public var body: some View {
-        navigatableView {
-            VStack {
-                Text("View1")
-                Button("to View2") {
-                    router.navigate(to: Destination.view2)
-                }
-                Button("to View3") {
-                    router.navigate(to: Destination.view3(fromView: "View1"))
-                }
+        VStack {
+            Text("View1")
+            Button("to View2") {
+                navigate(to: Destination.view2)
             }
-            .navigationTitle("View1")
+            Button("to View3") {
+                navigate(to: Destination.view3(fromView: "View1"))
+            }
         }
+        .navigationTitle("View1")
+        .navigatable(for: Destination.self)
     }
 }
 

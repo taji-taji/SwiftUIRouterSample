@@ -6,27 +6,43 @@ public protocol Navigatable where Self: View {
 }
 
 public extension Navigatable {
-    @ViewBuilder
-    func navigatableView<Content: View>(@ViewBuilder content: @escaping () -> Content) -> some View {
-        NavigatableView<Content, Destination>(router: router) {
-            content()
+    func navigateBack() {
+        router.back()
+    }
+    
+    func navigateBackToRoot() {
+        router.backToRoot()
+    }
+    
+    func navigate(to destination: Destination) {
+        router.navigate(to: destination)
+    }
+    
+    func rootView(with destination: Destination) -> RootView<AnyView> {
+        RootView(viewProvider: router.viewProvider) {
+            AnyView(router.view(for: destination))
         }
     }
 }
 
-private struct NavigatableView<Content, Destination>: View where Content: View, Destination: RouteDestination {
-    private let router: Router
-    private let content: () -> Content
-
-    init(router: Router, @ViewBuilder content: @escaping () -> Content) {
-        self.router = router
-        self.content = content
+public extension View {
+    func navigatable<D>(for destinationType: D.Type) -> some View where D: RouteDestination {
+        modifier(_Navigatable<D>())
     }
+}
 
-    var body: some View {
-        content()
+private struct _Navigatable<Destination>: ViewModifier where Destination: RouteDestination {
+    @EnvironmentObject private var router: Router
+    init() {}
+    
+    func body(content: Content) -> some View {
+        content
             .navigationDestination(for: Destination.self) { destination in
                 router.view(for: destination)
             }
     }
 }
+
+@attached(extension, conformances: Navigatable)
+@attached(member, names: named(router))
+public macro Navigatable() = #externalMacro(module: "NavigatableMacros", type: "NavigatableMacro")

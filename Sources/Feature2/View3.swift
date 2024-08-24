@@ -1,12 +1,12 @@
 import SwiftUI
 import Router
 
+@Navigatable
 public struct View3: View {
     public enum Destination: RouteDestination {
         case view4
     }
 
-    @EnvironmentObject private var router: Router
     @State private var isPresented = false
     private let fromView: String
 
@@ -21,13 +21,11 @@ public struct View3: View {
                 isPresented = true
             }
             Button("Back") {
-                router.back()
+                navigateBack()
             }
         }
         .sheet(isPresented: $isPresented) {
-            RootView(viewProvider: router.viewProvider) {
-                router.view(for: Destination.view4)
-            }
+            rootView(with: Destination.view4)
         }
         .navigationTitle("View3")
     }
